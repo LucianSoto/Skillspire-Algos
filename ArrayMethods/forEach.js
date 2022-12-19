@@ -49,4 +49,4 @@ const doubledPositiveNumbers = numbers.reduce((accumulator, currentValue) => {
   return accumulator;
 }, []);
 
-console.log(doubledPositiveNumbers); // [12, 4]
+// console.log(doubledPositiveNumbers); // [12, 4]

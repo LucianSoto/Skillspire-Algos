@@ -10,4 +10,4 @@ const groupAnagrams = (strs) => {
   return 
 }
 
-console.log(groupAnagrams(strs))
+console.log(groupAnagrams(strs))    
