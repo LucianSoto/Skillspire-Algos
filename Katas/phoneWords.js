@@ -31,38 +31,13 @@ function phoneWords(stringOfNums) {
   if(stringOfNums.length = 0) {return ''}
   const arr = stringOfNums.split('')
   let word = ''
+  let current = ''
 
-  // while ( arr.length > 0 ) {
-  //   let current = ''
+  while ( arr.length > 0 ) {
+    let current = ''
 
-  //   if(arr[0] === '1') {
-  //     arr.splice(0,1)
-  //   } else if ( arr[0] === '0') {
-  //     word += ' '
-  //     arr.splice(0,1)
-  //   }else if (arr[0] !== arr[1] ) {
-  //     current += arr[0]
-  //     word += letters[current]
-  //     arr.splice(0,1)
-  //   } else if ( arr[3] === arr[2] && arr[2] === arr[1] && arr[3] === '7' || arr[3] === '9' ) {
-  //     current += arr[3] + arr[2] + arr[1] + arr[0]
-  //     word += letters[current]
-  //     arr.splice(0,4)
-  //   } else if (arr[2] === arr[1] ) {
-  //     // console.log(arr[2], arr[1], arr[0])
-  //     current += arr[2] + arr[1] + arr[0]
-  //     word += letters[current]
-  //     arr.splice(0, 3)
-  //   } else {
-  //     current += arr[1] + arr[0]
-  //     word += letters[current]
-  //     arr.splice(0,2)
-  //   }
-  // }
-
-  for (let i = 0; i < arr.length ; i++) {
-    if(arr[i] === '1') {
-      arr.splice(i,1)
+    if(arr[0] === '1') {
+      arr.splice(0,1)
     } else if ( arr[0] === '0') {
       word += ' '
       arr.splice(0,1)
@@ -70,15 +45,36 @@ function phoneWords(stringOfNums) {
       current += arr[0]
       word += letters[current]
       arr.splice(0,1)
+    } else if ( arr[3] === arr[2] && arr[2] === arr[1] && arr[3] ==='7' ) {
+      current += arr[3] + arr[2] + arr[1] + arr[0]
+      word += letters[current]
+      arr.splice(0,4)
+    } else if ( arr[3] === arr[2] && arr[2] === arr[1] && arr[3] ==='9' ) {
+      current += arr[3] + arr[2] + arr[1] + arr[0]
+      word += letters[current]
+      arr.splice(0,4)
+    } else if (arr[2] === arr[1] ) {
+      // console.log(arr[2], arr[1], arr[0])
+      current += arr[2] + arr[1] + arr[0]
+      word += letters[current]
+      arr.splice(0, 3)
+    } else {
+      current += arr[1] + arr[0]
+      word += letters[current]
+      arr.splice(0,2)
     }
   }
   return word
 }
 
-// console.log(phoneWords('000'))
-// console.log(phoneWords('22266631339277717777'))
-// console.log(phoneWords('443355555566604466690277733099966688'))
-// console.log(phoneWords('99990007777'))
+// && arr[3] === '7' || arr[3] === '9'
+
+console.log(phoneWords('111'))
+console.log(phoneWords('000'))
+console.log(phoneWords('22266631339277717777'))
+console.log(phoneWords('443355555566604466690277733099966688'))
+console.log(phoneWords('99990007777'))
+console.log(phoneWords('66885551555'))
 //4433 555 555 66604466690277733099966688
 
 // this is how we can get keys by the value
@@ -117,4 +113,4 @@ let numsWord = 'wer'
 // numsWord = 'a' + ' ' + ' '
 // console.log(numsWord.split(''))
 
-console.log(numsWord.splice(2, 3))
+// console.log(numsWord.splice(2, 3))
