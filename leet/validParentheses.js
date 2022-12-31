@@ -89,12 +89,50 @@
 
 
 
-const isValid = (str) => {
+// var isValid = function(s) {
+//   const hm = { "(": ")", "{" : "}", "(" : ")" }
+//   const stk = []
+//   for (let char of s) {
+//     if(hm[char]) {
+//       stk.push(hm[char])
+//     } else if (stk.length > 0 && stk[stk.length - 1] === char) {
+//       stk.pop()
+//     } else {
+//       return false
+//     }
+//   }
+//   return stk.length === 0
+// }
 
+var isValid = function(s) {
+  if(s==='') { return true}
+  if(s.length % 2 !== 0) { return false }
+  const pairs = { "[":"]", "(":")", "{":"}" }
+  let stack = []
+  let sArr = s.toString().split("")
+
+  for(let i = 0; i < sArr.length; i++){
+    let br = sArr[i]
+    // console.log(pairs[br], 'pairs bracket')
+    if(pairs[br]){
+      stack.push(br)
+      // console.log(stack)
+    }
+    else {
+      let chkBr = stack.pop()
+      // console.log(br, pairs[chkBr], 'after pop')
+      if(pairs[chkBr] != br){
+        return false
+      }
+    }
+  }
+
+  return stack.length === 0
 }
 
-const map = new Map([
-  ['(', ')'],
-])
+console.log(isValid('(({}[]))'))
 
-// console.log('(' !== )
+// const pairs = { "[":"]", "(":")", "{":"}" }
+
+// console.log(pairs["]"])
+// console.log(pairs[])
