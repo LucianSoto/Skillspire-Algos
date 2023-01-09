@@ -11,4 +11,3 @@ const arraySubtractor = array2.reduce((prev, curr) =>
 
 console.log(arrayReducer)
 console.log(arraySubtractor)
-console.table(array)  
