@@ -27,3 +27,26 @@
 
 // console.log(arr1)
 
+// const array = [15, 16, 17, 18, 19];
+
+// function reducer(accumulator, currentValue, index) {
+//   const returns = accumulator + currentValue;
+//   console.log(
+//     `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
+//   );
+//   return returns;
+// }
+
+// array.reduce(reducer);
+
+const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
+const sum = objects.reduce(
+  (accumulator, currentValue) => accumulator + currentValue.x,
+  console.log(accumulator, currentvalue),
+  0,
+);
+
+console.log(sum); // 6
+
+
+
