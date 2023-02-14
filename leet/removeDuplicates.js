@@ -27,23 +27,36 @@
 // get index of last number
 // push blanks for rest of array
 
-var removeDuplicates = function(nums) {
-    let k 
-  for(let i = 0; i < nums.length;) {
-     if(nums[i] === nums[i+1] && nums[i+1] !== "_"){
-      nums.splice(nums[i], 1)
-      nums.push('_')
-    } else {
-       i++
-     }
-  }
+// var removeDuplicates = function(nums, val) {
+//   let k = 0
+//   for (let i = 0; i < nums.length; i++) {
+//     if(nums[i] === val) {
+//       nums[i] = "_"
 
-  k = nums.indexOf('_')
-  return k + ", nums = [" + nums + "]"
-};
+//       k++
+//     } else {
+//       console.log(false)
+//     }
+//   }
 
-console.log(removeDuplicates([0 , 0, 1, 1, 2, 2, 3, 3, 3, 4, 4, 5]))
 
+//   return 
+// };
+
+// console.log(removeDuplicates([2, 3, 2], 3))
+
+var removeElement = function(nums, val) {
+  if(nums.length == 0)
+  return 0
+
+  let firstPoint = 0
+
+  for (let secondPoint = firstPoint; secondPoint < nums.length; secondPoint ++)
+    if(nums[secondPoint] !== val)
+      nums[firstPoint++] = nums[secondPoint]
+
+    return firstPoint
+}
 
 // let arr = [1, 2, 3, 4, 5]
 
