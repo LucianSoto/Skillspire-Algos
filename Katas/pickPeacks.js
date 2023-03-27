@@ -1,6 +1,4 @@
 function pickPeaks(arr){
-  // console.log(arr[arr.length - 1])
-  let current
   let peaks = []
   let pos = []
 
@@ -9,28 +7,31 @@ function pickPeaks(arr){
 
     if(current > arr[i - 1]){
       if(current > arr[i + 1]){
-        peaks.push(i)
+        peaks.push(current)
+        pos.push(i)
       } else if (current === arr[i + 1]){
         for (let j = i + 1; j < arr.length - 1; j++){
-          console.log(current, j , arr[j+1])
           if(current > arr[j + 1]){
-            peaks.push(i)
+            // this statement needs change
+            peaks.push(current)
+            pos.push(i)
           } else if (current === arr[j + 1]) {
             //continue loop
           } else if (current < arr[j + 1]) {
-            console.log('in here', current, arr[j + 1])
             // end loop
-            i = j
+            i = j + 1
             {break}
           }
         }
+      } else if (current < arr[i + 1]) {
+
       }
     } 
   }  
-
-return peaks
-
-  //  return {pos:[],peaks:[]}  Where peaks == height of pos
+  return {
+    pos: pos,
+    peaks: peaks,
+  }
 }
 
-console.log(pickPeaks([1, 3, 3, 3, 4, 2]))
+console.log(pickPeaks([4,5,3,2,1,2,3,5,5,4,3]))
