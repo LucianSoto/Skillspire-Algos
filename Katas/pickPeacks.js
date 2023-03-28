@@ -12,9 +12,9 @@ function pickPeaks(arr){
       } else if (current === arr[i + 1]){
         for (let j = i + 1; j < arr.length - 1; j++){
           if(current > arr[j + 1]){
-            // this statement needs change
             peaks.push(current)
             pos.push(i)
+            {break}
           } else if (current === arr[j + 1]) {
             //continue loop
           } else if (current < arr[j + 1]) {
@@ -34,4 +34,4 @@ function pickPeaks(arr){
   }
 }
 
-console.log(pickPeaks([4,5,3,2,1,2,3,5,5,4,3]))
+console.log(pickPeaks([4,5,3,2,1,2,3,5,5,4,3,5,16, 6]))
