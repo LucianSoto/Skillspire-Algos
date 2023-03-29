@@ -45,18 +45,18 @@
 
 // console.log(removeDuplicates([2, 3, 2], 3))
 
-var removeElement = function(nums, val) {
-  if(nums.length == 0)
-  return 0
+// var removeElement = function(nums, val) {
+//   if(nums.length == 0)
+//   return 0
 
-  let firstPoint = 0
+//   let firstPoint = 0
 
-  for (let secondPoint = firstPoint; secondPoint < nums.length; secondPoint ++)
-    if(nums[secondPoint] !== val)
-      nums[firstPoint++] = nums[secondPoint]
+//   for (let secondPoint = firstPoint; secondPoint < nums.length; secondPoint ++)
+//     if(nums[secondPoint] !== val)
+//       nums[firstPoint++] = nums[secondPoint]
 
-    return firstPoint
-}
+//     return firstPoint
+// }
 
 // let arr = [1, 2, 3, 4, 5]
 
@@ -65,3 +65,40 @@ var removeElement = function(nums, val) {
 // console.log(arr)
 
 
+// var removeDuplicates = function(nums) {
+//   let k = 0
+
+//   for(let i = 0; i < nums.length; ) {
+//     console.log(nums[i], nums[i+1], "-", i )
+//     if(nums[i] === nums[i+1]){
+//       console.log('entered')
+//       nums.splice(i, 1)
+//       nums.push('_')
+//     } else if (nums[i] !== nums[i+1]){
+//       i++
+//     }
+//     console.log(nums)
+//   }
+
+//   return nums
+
+// }
+
+var removeDuplicates = function(nums) {
+  let counter = 0
+
+  for(let i = 0; i < nums.length; i++){
+    if(nums[i] != nums[i - 1]) {
+      nums[counter] = nums[i]
+      counter++
+    }
+  }
+
+  return counter
+};
+console.log(removeDuplicates([1,1,2]))
+
+// let arr = [1, 2, 3, 4, 5]
+
+// console.log(arr.splice(2, 1 ))
+// console.log(arr)
